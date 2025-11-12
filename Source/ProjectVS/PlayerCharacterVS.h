@@ -36,16 +36,9 @@ protected:
 	UFUNCTION()
 	void Look(const FInputActionValue& Value);
 
-	UFUNCTION()
-	void WalkToRun(const FInputActionInstance& Value);
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
 	TObjectPtr<UInputAction> MoveAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
 	TObjectPtr<UInputAction> LookAction;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
-	TObjectPtr<UInputAction> WalkToRunAction;
-
 };	

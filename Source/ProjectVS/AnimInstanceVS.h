@@ -20,7 +20,4 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Values")
 	float GroundSpeed;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Values")
-	bool bRun;
 };

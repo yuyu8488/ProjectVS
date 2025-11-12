@@ -41,8 +41,6 @@ void APlayerCharacterVS::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	{
 		Input->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacterVS::Move);
 		Input->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlayerCharacterVS::Look);
-		Input->BindAction(WalkToRunAction, ETriggerEvent::Triggered, this, &APlayerCharacterVS::WalkToRun);
-		Input->BindAction(WalkToRunAction, ETriggerEvent::Completed, this, &APlayerCharacterVS::WalkToRun);
 	}
 }
 
@@ -66,28 +64,4 @@ void APlayerCharacterVS::Look(const FInputActionValue& Value)
 
 	AddControllerPitchInput(Input.Y);
 	AddControllerYawInput(Input.X);
-}
-
-void APlayerCharacterVS::WalkToRun(const FInputActionInstance& Value)
-{
-	ETriggerEvent Event = Value.GetTriggerEvent();
-
-	switch (Event)
-	{
-	case ETriggerEvent::None:
-		break;
-	case ETriggerEvent::Triggered:
-	case ETriggerEvent::Started:
-		bRun = Value.GetValue().Get<bool>();
-	case ETriggerEvent::Ongoing:
-		break;
-	case ETriggerEvent::Canceled:
-		break;
-	case ETriggerEvent::Completed:
-		bRun = Value.GetValue().Get<bool>();
-		break;
-	default:
-		break;
-	}
-
 }

@@ -17,10 +17,5 @@ void UAnimInstanceVS::NativeUpdateAnimation(float DeltaSeconds)
 	if (Character)
 	{
 		GroundSpeed = Character->GetCharacterMovement()->Velocity.Size2D();
-
-		bRun = Character->bRun;
 	}
-
-
-
 }
