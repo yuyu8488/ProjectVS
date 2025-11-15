@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "AttributeSetVS.h"
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
-#include "AttributeSetVS.h"
 
 UAttributeSetVS::UAttributeSetVS()
 {

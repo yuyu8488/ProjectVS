@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "PlayerCharacterVS.h"
@@ -20,7 +20,9 @@ APlayerCharacterVS::APlayerCharacterVS()
 	SpringArm->SocketOffset = FVector(0.f, 0.f, 300.f);
 	SpringArm->bEnableCameraLag = true;
 	SpringArm->bEnableCameraRotationLag = true;
-	SpringArm->CameraLagSpeed = 3.f;
+	SpringArm->CameraLagSpeed = 0.f;
+	SpringArm->CameraRotationLagSpeed = 10.f;
+	SpringArm->CameraLagMaxDistance = 0.f;
 
 	MainCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
 	MainCamera->SetupAttachment(SpringArm);
